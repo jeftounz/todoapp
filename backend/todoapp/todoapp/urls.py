@@ -1,9 +1,7 @@
 from django.contrib import admin
-from django.urls import path
-from core import views
+from django.urls import path, include
 
 urlpatterns = [
-    path('', views.index, name="todo"),
-    path('del/<str:item_id>', views.remove, name="del"),
     path('admin/', admin.site.urls),
+    path('', include('core.urls')),  # Incluye las URLs de core
 ]

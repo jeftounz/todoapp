@@ -11,7 +11,7 @@ def index(request):
         form = TodoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('todo')
+            return redirect('core:index')
     form = TodoForm()
 
     page = {
@@ -25,4 +25,4 @@ def remove(request, item_id):
     item = Todo.objects.get(id=item_id)
     item.delete()
     messages.info(request, "item removed !!!")
-    return redirect('todo')
+    return redirect('core:index')
