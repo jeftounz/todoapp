@@ -1,38 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="es" dir="ltr">
 <head>
+  {% load static %}
   <meta charset="utf-8">
   <title>{{title}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Tu archivo CSS local -->
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <!-- jQuery y Bootstrap JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!--style-->
-  <style>
-    .card {
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),
-                 0 6px 20px 0 rgba(0,0,0,0.39);
-      background: lightpink;
-      margin-bottom: 5%;
-      border-radius: 25px;
-      padding: 2%;
-      overflow: auto;
-      resize: both;
-      text-overflow: ellipsis;
-    }
-    .card:hover {
-      background: lightblue;
-    }
-    .submit_form {
-      text-align: center;
-      padding: 3%;
-      background: pink;
-      border-radius: 25px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4),
-                  0 6px 20px 0 rgba(0,0,0,0.36);
-    }
-  </style>
 </head>
 
 <body class="container-fluid">
@@ -83,5 +62,8 @@
       </div>
     </div>
   </div>
+
+  <!-- Ejemplo para futuras imágenes en media/ -->
+  {# <img src="{{ MEDIA_URL }}logo.png" class="img-responsive" alt="Logo"> #}
 </body>
 </html>
