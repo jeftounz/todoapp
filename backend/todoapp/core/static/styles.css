@@ -31,3 +31,36 @@
   height: auto;
   border-radius: 10px;
 }
+
+/* Estilos para la información de timezone */
+.timezone-info {
+  margin: 10px 0;
+  font-size: 0.9em;
+}
+
+.local-time {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.timezone-badge {
+  background-color: #e0f7fa;
+  color: #00838f;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
+/* Estilos para el selector de timezone */
+select#id_timezone {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.details {
+  white-space: pre-line;  /* Respeta saltos de línea */
+}

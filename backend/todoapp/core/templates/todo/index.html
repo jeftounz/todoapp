@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
+
 <head>
   {% load static %}
   <meta charset="utf-8">
@@ -16,11 +17,11 @@
 
 <body class="container-fluid">
   {% if messages %}
-    {% for message in messages %}
-      <div class="alert alert-info">
-        <strong>{{message}}</strong>
-      </div>
-    {% endfor %}
+  {% for message in messages %}
+  <div class="alert alert-info">
+    <strong>{{message}}</strong>
+  </div>
+  {% endfor %}
   {% endif %}
 
   <center class="row">
@@ -31,20 +32,21 @@
   <div class="row">
     <div class="col-md-8">
       {% for i in list %}
-        <div class="card">
-          <center><b>{{i.title}}</b></center>
-          <hr/>
-          {{i.date}}
-          <hr/>
-          {{i.details}}
-          <br /><br />
-          <form action="{% url 'core:remove' i.id %}" method="POST" style="padding-right: 4%; padding-bottom: 3%;">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-primary" style="float: right;">
-              <span class="glyphicon glyphicon-trash"></span> &nbsp; remove
-            </button>
-          </form>
-        </div>
+      <div class="card">
+        <center><b>{{i.title}}</b></center>
+        <hr />
+        <!-- Muestra la fecha localizada y la zona horaria -->
+        <strong>Fecha:</strong> {{ i.local_time|date:"d/m/Y H:i" }} ({{ i.timezone }})
+        <hr />
+        {{i.details}}
+        <br /><br />
+        <form action="{% url 'core:remove' i.id %}" method="POST" style="padding-right: 4%; padding-bottom: 3%;">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger" style="float: right;">
+            <span class="glyphicon glyphicon-trash"></span> &nbsp; Eliminar
+          </button>
+        </form>
+      </div>
       {% endfor %}
     </div>
 
@@ -66,4 +68,5 @@
   <!-- Ejemplo para futuras imágenes en media/ -->
   {# <img src="{{ MEDIA_URL }}logo.png" class="img-responsive" alt="Logo"> #}
 </body>
+
 </html>
